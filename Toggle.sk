@@ -1,0 +1,56 @@
+on skript load:
+	if {toggle.za} is not set:
+		set {toggle.za} to false
+	if {toggle.wr} is not set:
+		set {toggle.wr} to false
+	if {toggle.hns} is not set:
+		set {toggle.hns} to false
+	if {toggle.lives} is not set:
+		set {toggle.lives} to false
+	
+	
+command /toggle [<text>]:
+	trigger:
+		if arg 1 is not set:
+			message "&ePlease specify the game name"
+		if arg 1 is "ZombieApocalypse":
+			if {toggle.za} = false:
+				set {toggle.za} to true
+				message "&eSet Zombie Apocalypse To &4%{toggle.za}%"
+				stop
+			if {toggle.za} is true:
+				set {toggle.za} to false
+				message "&eSet Zombie Apocalypse To &4%{toggle.za}%"
+				stop
+		if arg 1 is "WorldReset":
+			if {toggle.wr} is false:
+				set {toggle.wr} to true
+				message "&eSet World Reset To &4%{toggle.za}%"
+				stop
+			if {toggle.wr} is true:
+				set {toggle.wr} to false
+				message "&eSet World Reset To &4%{toggle.za}%"
+				stop
+		if arg 1 is "HideAndSeek":
+			if {toggle.hns} is false:
+				set {toggle.hns} to true
+				message "&eSet Hide And Seek To &4%{toggle.za}%"
+				stop
+			if {toggle.hns} is true:
+				set {toggle.hns} to false
+				message "&eSet Hide And Seek To &4%{toggle.za}%"
+				stop
+		if arg 1 is "ThreeLives":
+			if {toggle.lives} is false:
+				set {toggle.lives} to true
+				message "&eSet Three Lives To &4%{toggle.za}%"
+				stop
+			if {toggle.lives} is true:
+				set {toggle.lives} to false
+				message "&eSet Three Lives To &4%{toggle.za}%"
+				stop
+		if arg 1 is "Status":
+			message "&eZombie Apocalypse -> &4%{toggle.za}%"
+			message "&eWorld Reset -> &4%{toggle.wr}%"
+			message "&eHide And Seek -> &4%{toggle.hns}%"
+			message "&eThree Lives -> &4%{toggle.Lives}%"
